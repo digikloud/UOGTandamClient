@@ -42,7 +42,8 @@ button {
 
 .main {
   display: flex;
-  height: calc(100% - 80px);
+  /* height: calc(100% - 80px); */
+  height: 100%;
   width: 100%;
 }
 
@@ -57,7 +58,8 @@ button {
 
 .right {
   height: 100%;
-  width: calc(100% - 200px);
+  /* width: calc(100% - 200px); */
+  width: 100%;
 }
 
 .viewer-container {
