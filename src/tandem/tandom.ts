@@ -15,7 +15,6 @@ export class TandemViewer {
         corsWorker: true,
       };
 
-      // console.log("facilities");
       const av: any = Autodesk.Viewing;
       av.Initializer(options, () => {
         this.viewer = new av.GuiViewer3D(div, {
@@ -28,7 +27,6 @@ export class TandemViewer {
           "Authorization"
         ] = `Bearer ${_access_token}`;
         this.app = new Autodesk.Tandem.DtApp();
-        // console.log(this.app);
         // window.DT_APP = this.app;
         resolve(this);
       });
@@ -38,7 +36,6 @@ export class TandemViewer {
   async fetchFacilities(URN: string): Promise<any[]> {
     const FacilitiesSharedWithMe = await this.app.getCurrentTeamsFacilities();
     const myFacilities = await this.app.getUsersFacilities();
-    // console.log("myFacilities", myFacilities);
     return [].concat(FacilitiesSharedWithMe, myFacilities);
   }
 
